@@ -5,8 +5,9 @@ const port = 5000
 app.use(express.json())
 
 let std = [
-    { id: 1, name: "Dew"},
-    { id: 2, name: "Chat"},
+    { id: 1, name: "Chisanuphong"},
+    { id: 2, name: "Pongpan"},
+    { id: 3, name: "Siwat"},
 ]
 
 app.get('/',(req , res) => res.send('Hello'))
@@ -33,7 +34,7 @@ app.put('/std/:id', (req , res)=> {
     res.json(std)
 })
 app.delete('/std/:id', (req , res)=> {
-    std.filter(i => i.id != req.params.id)
+    std = std.filter(i => i.id != req.params.id)
     res.json(std)
 })
 app.listen(port, () => {
